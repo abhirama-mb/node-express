@@ -7,6 +7,7 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send("Student Notes API is running 🚀");
 });
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
