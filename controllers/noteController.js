@@ -79,10 +79,31 @@ const updateNote = async (req, res) => {
     res.json(data);
 };
 
+// DELETE /notes/:id
+const deleteNote = async (req, res) => {
+    const { id } = req.params;
+
+    const { error } = await supabase
+        .from("notes")
+        .delete()
+        .eq("id", id);
+
+    if (error) {
+        return res.status(500).json(error);
+    }
+
+    res.json({
+        message: "Note deleted successfully"
+    });
+};
+
+
+
 
 module.exports = {
     getNotes,
     createNote,
     getNoteById,
-    updateNote
+    updateNote,
+    deleteNote
 };
