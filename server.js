@@ -21,3 +21,6 @@ app.use("/notes", noteRoutes);
 
 
 console.log("Learning git stash");
+
+
+console.log("Learning git revert");
