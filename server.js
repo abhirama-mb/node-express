@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("Student Notes API is running 🚀");
+  res.send("Version from feature branch 🚀");
 });
 
 const PORT = process.env.PORT || 3000;
