@@ -54,8 +54,35 @@ const getNoteById = async (req, res) => {
     res.json(data);
 };
 
+// PUT /notes/:id
+const updateNote = async (req, res) => {
+    const { id } = req.params;
+    const { title, content, category } = req.body;
+
+    const { data, error } = await supabase
+        .from("notes")
+        .update({
+            title,
+            content,
+            category
+        })
+        .eq("id", id)
+        .select()
+        .single();
+
+    if (error) {
+        return res.status(404).json({
+            message: "Note not found"
+        });
+    }
+
+    res.json(data);
+};
+
+
 module.exports = {
     getNotes,
     createNote,
-    getNoteById
+    getNoteById,
+    updateNote
 };
