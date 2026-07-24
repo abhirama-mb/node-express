@@ -6,6 +6,7 @@ app.use(express.json());
 
 app.get("/", (req, res) => {
   res.send("Version from main branch 🔥");
+  res.send("Version from feature branch 🚀");
 });
 
 const PORT = process.env.PORT || 3000;
