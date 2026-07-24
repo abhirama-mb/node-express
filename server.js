@@ -5,12 +5,11 @@ const app = express();
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("Version from main branch  hhehe 🔥");
+  res.send("Version from main branch 🔥");
+  res.send("Version from feature branch 🚀");
 });
 
 const PORT = process.env.PORT || 3000;
-console.log("Learning git revert");
-
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
@@ -23,3 +22,5 @@ app.use("/notes", noteRoutes);
 
 console.log("Learning git stash");
 
+
+console.log("Learning git revert");
