@@ -18,3 +18,5 @@ app.listen(PORT, () => {
 const noteRoutes = require("./routes/noteRoutes");
 app.use(express.json());
 app.use("/notes", noteRoutes);
+
+console.log("hey there");
